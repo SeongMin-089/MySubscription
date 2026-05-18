@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Malgun Gothic", Arial, sans-serif;
+    background-color: #f5f7fb;
+    color: #222;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+header {
+    background-color: #2f5bea;
+    color: white;
+    padding: 20px 0;
+}
+
+.header-inner {
+    width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 28px;
+}
+
+nav a {
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    width: 1000px;
+    margin: 40px auto;
+    min-height: 500px;
+}
+
+.main-box {
+    background-color: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.main-box h2 {
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+
+.main-box p {
+    line-height: 1.7;
+    font-size: 17px;
+}
+
+.btn-wrap {
+    margin-top: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #2f5bea;
+    color: white;
+    border-radius: 8px;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.btn.sub {
+    background-color: #444;
+}
+
+footer {
+    background-color: #222;
+    color: #ddd;
+    text-align: center;
+    padding: 25px 0;
+    margin-top: 60px;
+}
+.form-box {
+    margin-top: 25px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #2f5bea;
+}
+
+button.btn {
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+.list-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+    background-color: white;
+}
+
+.list-table th,
+.list-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+    font-size: 15px;
+}
+
+.list-table th {
+    background-color: #f0f3ff;
+    font-weight: bold;
+}
+
+.list-table tr:hover {
+    background-color: #f9f9f9;
+}
+.btn.small {
+    padding: 7px 12px;
+    font-size: 13px;
+    border-radius: 6px;
+    margin-right: 0;
+}
