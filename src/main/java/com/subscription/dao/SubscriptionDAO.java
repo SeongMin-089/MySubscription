@@ -119,4 +119,68 @@ public class SubscriptionDAO {
 
         return result;
     }
+    
+    public SubscriptionDTO getSubscription(int subNo, int memberNo) {
+        SubscriptionDTO subscription = null;
+
+        String sql = "SELECT * FROM subscription_tbl WHERE sub_no = ? AND member_no = ?";
+
+        try (
+            Connection conn = DBconnect.getConnection();
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+        ) {
+            pstmt.setInt(1, subNo);
+            pstmt.setInt(2, memberNo);
+
+            ResultSet rs = pstmt.executeQuery();
+
+            if (rs.next()) {
+                subscription = new SubscriptionDTO();
+
+                subscription.setSubNo(rs.getInt("sub_no"));
+                subscription.setMemberNo(rs.getInt("member_no"));
+                subscription.setServiceName(rs.getString("service_name"));
+                subscription.setCategory(rs.getString("category"));
+                subscription.setPrice(rs.getInt("price"));
+                subscription.setPaymentDay(rs.getInt("payment_day"));
+                subscription.setMemo(rs.getString("memo"));
+                subscription.setRegdate(rs.getString("regdate"));
+            }
+
+            rs.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return subscription;
+    }
+
+    public int updateSubscription(SubscriptionDTO subscription) {
+        int result = 0;
+
+        String sql = "UPDATE subscription_tbl "
+                   + "SET service_name = ?, category = ?, price = ?, payment_day = ?, memo = ? "
+                   + "WHERE sub_no = ? AND member_no = ?";
+
+        try (
+            Connection conn = DBconnect.getConnection();
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+        ) {
+            pstmt.setString(1, subscription.getServiceName());
+            pstmt.setString(2, subscription.getCategory());
+            pstmt.setInt(3, subscription.getPrice());
+            pstmt.setInt(4, subscription.getPaymentDay());
+            pstmt.setString(5, subscription.getMemo());
+            pstmt.setInt(6, subscription.getSubNo());
+            pstmt.setInt(7, subscription.getMemberNo());
+
+            result = pstmt.executeUpdate();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return result;
+    }
 }
