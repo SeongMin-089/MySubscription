@@ -8,13 +8,14 @@ public class SubscriptionDTO {
     private int price;
     private int paymentDay;
     private String memo;
+    private String status;
     private String regdate;
 
     public SubscriptionDTO() {
     }
 
     public SubscriptionDTO(int subNo, int memberNo, String serviceName, String category,
-                           int price, int paymentDay, String memo, String regdate) {
+                           int price, int paymentDay, String memo, String status, String regdate) {
         this.subNo = subNo;
         this.memberNo = memberNo;
         this.serviceName = serviceName;
@@ -22,6 +23,7 @@ public class SubscriptionDTO {
         this.price = price;
         this.paymentDay = paymentDay;
         this.memo = memo;
+        this.status = status;
         this.regdate = regdate;
     }
 
@@ -79,6 +81,14 @@ public class SubscriptionDTO {
 
     public void setMemo(String memo) {
         this.memo = memo;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public String getRegdate() {

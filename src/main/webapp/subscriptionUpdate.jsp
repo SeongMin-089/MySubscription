@@ -20,6 +20,12 @@ if (subscription == null) {
 	response.sendRedirect(request.getContextPath() + "/subscriptionList.jsp");
 	return;
 }
+
+String status = subscription.getStatus();
+
+if (status == null || status.trim().equals("")) {
+	status = "구독중";
+}
 %>
 
 <!DOCTYPE html>
@@ -45,7 +51,7 @@ if (subscription == null) {
 				</h2>
 
 				<p>
-					변경된 서비스명, 카테고리, 월 구독료, 결제일을 수정하면
+					변경된 서비스명, 카테고리, 월 구독료, 결제일, 구독 상태를 수정하면<br>
 					내 구독 목록에 바로 반영됩니다.
 				</p>
 			</div>
@@ -98,6 +104,15 @@ if (subscription == null) {
 						<input type="number" id="paymentDay" name="paymentDay" min="1" max="31"
 							value="<%=subscription.getPaymentDay()%>" required>
 					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="status">구독 상태</label>
+					<select id="status" name="status" required>
+						<option value="구독중" <%="구독중".equals(status) ? "selected" : ""%>>구독중</option>
+						<option value="해지 예정" <%="해지 예정".equals(status) ? "selected" : ""%>>해지 예정</option>
+						<option value="해지" <%="해지".equals(status) ? "selected" : ""%>>해지</option>
+					</select>
 				</div>
 
 				<div class="form-group">

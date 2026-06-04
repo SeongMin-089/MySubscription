@@ -417,3 +417,131 @@
     background: linear-gradient(180deg, #111827 0%, #1f2937 100%);
     box-shadow: 0 14px 30px rgba(17, 24, 39, 0.22);
 }
+
+.list-control {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.sort-form select {
+    height: 40px;
+    padding: 0 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    background: #fff;
+    color: #374151;
+    font-size: 14px;
+    font-weight: 800;
+    outline: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.sort-form select:focus {
+    border-color: #2f5bea;
+    box-shadow: 0 0 0 4px rgba(47, 91, 234, 0.1);
+}
+
+/* Category summary */
+.category-section {
+    margin-top: 42px;
+}
+
+.category-title {
+    margin-bottom: 18px;
+}
+
+.category-title span {
+    display: block;
+    margin-bottom: 8px;
+    color: #2f5bea;
+    font-size: 13px;
+    font-weight: 900;
+    letter-spacing: 0.8px;
+}
+
+.category-title h3 {
+    color: #111827;
+    font-size: 26px;
+    letter-spacing: -0.7px;
+}
+
+.category-card-wrap {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.category-card {
+    padding: 24px;
+    border-radius: 22px;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 10px 26px rgba(15, 23, 42, 0.05);
+}
+
+.category-card span {
+    display: block;
+    margin-bottom: 12px;
+    color: #6b7280;
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.category-card strong {
+    display: block;
+    color: #111827;
+    font-size: 28px;
+    letter-spacing: -0.8px;
+}
+
+.category-empty {
+    grid-column: 1 / -1;
+    padding: 34px;
+    border-radius: 22px;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    color: #6b7280;
+    text-align: center;
+    box-shadow: 0 10px 26px rgba(15, 23, 42, 0.05);
+}
+
+.status-badge,
+.payment-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 68px;
+    height: 30px;
+    padding: 0 10px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 900;
+}
+
+.status-구독중 {
+    background: #ecfdf5;
+    color: #059669;
+}
+
+.status-해지-예정 {
+    background: #fffbeb;
+    color: #d97706;
+}
+
+.status-해지 {
+    background: #f3f4f6;
+    color: #6b7280;
+}
+
+.payment-badge {
+    margin-left: 8px;
+    background: #eef2ff;
+    color: #2f5bea;
+}
+
+.payment-badge.soon {
+    background: #fff1f2;
+    color: #e11d48;
+}

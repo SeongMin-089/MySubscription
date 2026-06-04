@@ -40,6 +40,11 @@ public class SubscriptionAddServlet extends HttpServlet {
         int price = Integer.parseInt(request.getParameter("price"));
         int paymentDay = Integer.parseInt(request.getParameter("paymentDay"));
         String memo = request.getParameter("memo");
+        String status = request.getParameter("status");
+
+        if (status == null || status.trim().equals("")) {
+            status = "구독중";
+        }
 
         SubscriptionDTO subscription = new SubscriptionDTO();
         subscription.setMemberNo(loginMember.getMemberNo());
@@ -48,6 +53,7 @@ public class SubscriptionAddServlet extends HttpServlet {
         subscription.setPrice(price);
         subscription.setPaymentDay(paymentDay);
         subscription.setMemo(memo);
+        subscription.setStatus(status);
 
         SubscriptionDAO dao = new SubscriptionDAO();
         int result = dao.insertSubscription(subscription);
