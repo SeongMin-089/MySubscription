@@ -5,13 +5,13 @@
 MemberDTO loginMember = (MemberDTO) session.getAttribute("loginMember");
 %>
 
-<header>
+<header class="site-header">
     <div class="header-inner">
-        <h1>
+        <h1 class="logo">
             <a href="${pageContext.request.contextPath}/index.jsp">MySubscription</a>
         </h1>
 
-        <nav>
+        <nav class="gnb">
             <a href="${pageContext.request.contextPath}/index.jsp">홈</a>
 
             <%
