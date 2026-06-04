@@ -1,7 +1,37 @@
+# Java build
 bin/
 build/
 target/
+*.class
 
+# Eclipse workspace / settings
+.metadata/
+.recommenders/
+.apt_generated/
+.apt_generated_tests/
+
+# Eclipse server
+Servers/
+tmp/
+wtpwebapps/
+
+# Tomcat / deploy
+*.war
+*.ear
+
+# Logs
+*.log
+
+# OS
 .DS_Store
 Thumbs.db
-*.log
+
+# Env / secrets
+.env
+*.env
+config.properties
+db.properties
+
+# IntelliJ just in case
+.idea/
+*.iml
